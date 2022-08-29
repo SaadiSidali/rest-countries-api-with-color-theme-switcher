@@ -1,19 +1,18 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import axios from 'axios';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import { setCountries } from './store/countriesSlice'
+import { setCountries } from './store/countriesSlice';
 
-import './App.css';
 import Header from './components/Header';
-import Main from './components/Main';
-import Grid from './components/Grid';
-import Search from './components/Search';
-import Filter from './components/Filter';
+
+import Home from './routes/Home';
+import Country from './routes/Country';
 
 function App() {
   const darkTheme = useSelector((state) => state.darkTheme.value);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const FetchData = async () => {
@@ -21,19 +20,23 @@ function App() {
       dispatch(setCountries(data));
     };
     FetchData().catch(console.error);
-    // eslint-disable-next-line 
+    // eslint-disable-next-line
   }, []);
 
   return (
-    <div className={`App ${darkTheme ? 'dark' : ''} `}>
+    <div className={`App ${darkTheme ? 'dark' : ''}`}>
       <Header />
-      <Main>
-        <div className='flex w-full justify-between'>
-          <Search />
-          <Filter />
-        </div>
-        <Grid />
-      </Main>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path='/'
+            element={
+              <Home />
+            }
+          />
+          <Route path='/:country' element={<Country />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

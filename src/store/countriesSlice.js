@@ -7,7 +7,6 @@ export const countries = createSlice({
     },
     reducers: {
         setCountries: (state, action) => {
-            console.log(action.payload);
             state.value.push(action.payload);
         },
     },
