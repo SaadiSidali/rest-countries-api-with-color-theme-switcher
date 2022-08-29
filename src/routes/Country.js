@@ -18,7 +18,6 @@ const Country = () => {
     if (!countries) {
         return <>Loading...</>;
     }
-    console.log();
 
     const handleBack = () => {
         navigate('/');
@@ -30,18 +29,18 @@ const Country = () => {
 
     return (
         <>
-            <div className='bg-VeryLightGray dark:bg-VeryDarkBlueBg px-16 dark:text-White h-screen'>
+            <div className='bg-VeryLightGray dark:bg-VeryDarkBlueBg sm:px-16 px-8 dark:text-White sm:h-screen'>
                 <button
                     onClick={handleBack}
-                    className='dark:bg-DarkBlue px-6 py-2 font-light rounded shadow my-2'
+                    className='dark:bg-DarkBlue px-6 py-1 font-thin text-sm rounded shadow-md my-8'
                 >
                     ⬅ Back
                 </button>
-                <div className='grid grid-cols-2 my-16 text-sm'>
+                <div className='grid grid-cols-1 sm:my-16 text-sm sm:grid-cols-2'>
                     <img src={data.flags.png} alt={data.name.common} className='h-72' />
                     <div>
                         <h1 className='text-2xl font-bold my-4'>{data.name.common}</h1>
-                        <div className='flex'>
+                        <div className='sm:flex leading-10 sm:leading-relaxed'>
                             <div className='mr-16 '>
                                 <p>
                                     <span className='font-semibold'> Native Name:</span>{' '}
@@ -58,7 +57,7 @@ const Country = () => {
                                     <span className='font-semibold'> Sub Regions:</span>{' '}
                                     {data.subregion}
                                 </p>
-                                <p>
+                                <p className='mb-12 '>
                                     <span className='font-semibold'> Capital:</span>{' '}
                                     {data.capital}
                                 </p>
@@ -79,7 +78,7 @@ const Country = () => {
                         </div>
                         <div className='mt-16'>
                             <div className='flex flex-wrap'>
-                                <span className='font-semibold my-2'> Border Countries:</span>{' '}
+                                <span className='font-semibold my-2 block w-full sm:w-auto'> Border Countries:</span>{' '}
                                 {borderCountries(data.borders).map((n) => (
                                     <div
                                         key={n}

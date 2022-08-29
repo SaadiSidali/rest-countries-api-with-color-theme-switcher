@@ -12,7 +12,6 @@ export const countries = createSlice({
     },
 });
 
-// Action creators are generated for each case reducer function
 export const { setCountries } = countries.actions;
 
 export default countries.reducer;

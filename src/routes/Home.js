@@ -5,7 +5,7 @@ import Filter from "../components/Filter";
 import Grid from "../components/Grid";
 const Home = () => (<>
     <Main>
-        <div className='flex w-full justify-between'>
+        <div className='sm:flex w-full justify-between'>
             <Search />
             <Filter />
         </div>

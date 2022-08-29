@@ -15,7 +15,7 @@ const Filter = () => {
         <>
             <select
                 id='countries'
-                className='dark:bg-DarkBlue dark:text-White text-sm rounded border-none outline-none my-8 py-2 px-3 '
+                className='dark:bg-DarkBlue dark:text-White text-sm rounded border-none outline-none mb-6 sm:my-8 py-2 px-3 '
                 onChange={handleChange}
             >
                 <option defaultValue>Filter by Region</option>

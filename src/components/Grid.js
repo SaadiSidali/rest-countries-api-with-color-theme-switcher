@@ -34,7 +34,7 @@ const Grid = () => {
 
     return (
         <>
-            <div className='grid grid-cols-4 gap-14 '>{cards}</div>
+            <div className='grid sm:grid-cols-4 grid-cols-1 gap-14 '>{cards}</div>
         </>
     );
 };

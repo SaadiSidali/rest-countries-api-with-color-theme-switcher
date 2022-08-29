@@ -4,6 +4,7 @@ import { setSearch } from '../store/searchSlice';
 
 const Search = () => {
     const darkTheme = useSelector((state) => state.darkTheme.value);
+    const searchTerm = useSelector((state) => state.search.value);
 
     const dispatch = useDispatch()
 
@@ -39,6 +40,7 @@ const Search = () => {
                     className='py-2 text-sm dark:bg-DarkBlue VeryDarkBlueBg rounded pl-10 focus:outline-none dark:text-White w-96 my-8 shadow'
                     placeholder='Search for a country...'
                     autoComplete='off'
+                    value={searchTerm}
                 />
             </div>
         </>

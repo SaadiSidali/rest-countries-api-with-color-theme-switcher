@@ -24,7 +24,7 @@ function App() {
   }, []);
 
   return (
-    <div className={`App ${darkTheme ? 'dark' : ''}`}>
+    <div className={`App ${darkTheme ? 'dark' : ''} `}>
       <Header />
       <BrowserRouter>
         <Routes>
